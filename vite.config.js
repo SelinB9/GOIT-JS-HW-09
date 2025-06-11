@@ -6,14 +6,17 @@ import SortCss from 'postcss-sort-media-queries';
 
 export default defineConfig(({ command }) => {
   return {
-    define: {
-      [command === 'serve' ? 'global' : '_global']: {},
-    },
+    // 💡 GitHub Pages için proje adıyla aynı base path
+    base: '/GOIT-JS-HW-09/',
+
     root: 'src',
+
     build: {
       sourcemap: true,
+      outDir: '../dist',         // build çıktısı
+      emptyOutDir: true,
       rollupOptions: {
-        input: glob.sync('./src/*.html'),
+        input: glob.sync('./src/*.html'),  // Tüm HTML dosyalarını giriş olarak al
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
@@ -34,9 +37,8 @@ export default defineConfig(({ command }) => {
           },
         },
       },
-      outDir: '../dist',
-      emptyOutDir: true,
     },
+
     plugins: [
       injectHTML(),
       FullReload(['./src/**/**.html']),
