@@ -5,41 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page 3</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-    <script src="./js/2-form.js" defer></script>
+
   </head>
   <body>
-    <load
-      src="./partials/header.html"
-      icon-path="./img/sprite.svg#logo"
-      highlight-curr="active"
-    />
-
-    <main>
-      <div class="container">
-        <h1 class="main-title">
-          <span class="main-title-gradient">Welcome</span> to Form
-        </h1>
-
-        <!-- Form başlıyor -->
-        <form class="feedback-form" autocomplete="off">
-          <label>
+   <!--HTML yapısına bir geri bildirim formu ekledik-->
+    <form class="feedback-form" autocomplete="off">
+        <label>
             Email
             <input type="email" name="email" autofocus />
-          </label>
-          <label>
+        </label>
+        <label>
             Message
             <textarea name="message" rows="8"></textarea>
-          </label>
-          <button type="submit" name="submit">Submit</button>
-        </form>
-        <!-- Form bitiyor -->
-
-        <!-- Geri dön butonu formun altına taşındı -->
-        <load src="./partials/back-link.html" />
-      </div>
-    </main>
-
-    <load src="./partials/footer.html" />
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+     <script type="module" src="./js/2-form.js" ></script>
   </body>
 </html>
